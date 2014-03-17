@@ -1,0 +1,19 @@
+
+body {
+  margin: 0;
+}
+.msglist {
+  background-color: #999;
+}
+.conversation {
+  background-color: #9aa;
+}
+section {
+  margin: none;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.sections {
+  width: 100%;
+}
