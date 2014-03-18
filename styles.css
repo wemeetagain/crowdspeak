@@ -1,19 +1,87 @@
 
 body {
+  font-size: 15px;
+  font-family: helvetica, sans-serif;
   margin: 0;
 }
 .msglist {
-  background-color: #999;
+  left: 0;
+  right: 0;
 }
 .conversation {
-  background-color: #9aa;
+  left: 99%;
 }
 section {
   margin: none;
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-}
-.sections {
+  position: fixed;
   width: 100%;
+  top: 40px;
+  bottom: 0;
+  border: 1px solid #ddd;
+}
+
+
+header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: -webkit-radial-gradient(circle, #2098d5 20%, #0e76bc 75%);
+  text-align: center;
+  font-size: 2em;
+  box-shadow: 2px 0 15px #888;
+}
+header img {
+  width: 30px;
+  vertical-align: middle;
+  margin: 5px auto;
+}
+
+.header {
+  margin: 8px auto;
+  width: 25px;
+  position: absolute;
+}
+.header-right {
+  right: 5px;
+}
+.header-left {
+  left: 5px;
+}
+.header:active {
+  background-image: -webkit-radial-gradient(circle, rgba(255, 255, 255, 0.75) 30%, rgba(0, 0, 0, 0) 75%);
+}
+
+.msglist ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.msglist li {
+  border-bottom: 1px solid #aaa;
+  padding: 5px;
+  max-height: 40px;
+  overflow-y: hidden;
+}
+.msglist li img {
+  vertical-align: sub;
+}
+.msglist li h3 {
+  display: block;
+  font-weight: 100;
+  margin: 0;
+}
+.msglist li span {
+  white-space:nowrap;
+  overflow: hidden;
+  display: block;
+  height: 15px;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.msglist div {
+  display: inline-block;
+  overflow-y: hidden;
+  width: 80%;
 }
