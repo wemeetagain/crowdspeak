@@ -7,10 +7,12 @@ body {
 .msglist {
   left: 0;
   right: 0;
+  overflow-y: scroll;
 }
 .conversation {
   left: 99%;
   background-color: #fff;
+  box-shadow: -5px 0 15px #999;
 }
 section {
   margin: none;
@@ -66,7 +68,6 @@ header img {
   border-bottom: 1px solid #aaa;
   padding: 5px;
   max-height: 40px;
-  overflow-y: hidden;
 }
 .msglist li img {
   vertical-align: sub;
@@ -86,6 +87,106 @@ header img {
 }
 .msglist div {
   display: inline-block;
-  overflow-y: hidden;
   width: 80%;
+}
+.sendmsg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 30px;
+  background-color: #aaa;
+}
+.messages ul {
+  list-style-type: none;
+}
+.messages li {
+  margin-top: 5px;
+}
+.otherown 
+{
+  display: inline-block;
+position: relative;
+  min-height: 20px;
+padding: 5px;
+background: #D1F1FF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #206DD0 solid 3px;
+}
+
+.otherown:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 5px 17px 5px 0;
+border-color: transparent #D1F1FF;
+display: block;
+width: 0;
+z-index: 1;
+margin-top: -5px;
+left: -17px;
+top: 50%;
+}
+
+.otherown:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 7px 19px 7px 0;
+border-color: transparent #206DD0;
+display: block;
+width: 0;
+z-index: 0;
+margin-top: -7px;
+left: -22px;
+top: 50%;
+}
+.userown 
+{
+  display: inline-block;
+position: relative;
+  min-height: 20px;
+padding: 5px;
+background: #FFE5BB;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #FF9400 solid 3px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.userown:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 5px 0 5px 17px;
+border-color: transparent #FFE5BB;
+display: block;
+width: 0;
+z-index: 1;
+margin-top: -5px;
+right: -17px;
+top: 50%;
+}
+
+.userown:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 7px 0 7px 19px;
+border-color: transparent #FF9400;
+display: block;
+width: 0;
+z-index: 0;
+margin-top: -7px;
+right: -22px;
+top: 50%;
 }
