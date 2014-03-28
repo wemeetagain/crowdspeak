@@ -7,12 +7,13 @@ body {
 .msglist {
   left: 0;
   right: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .conversation {
   left: 99%;
   background-color: #fff;
   box-shadow: -5px 0 15px #999;
+  padding-bottom: 20px;
 }
 section {
   margin: none;
@@ -22,6 +23,7 @@ section {
   bottom: 0;
   border: 1px solid #ddd;
   transition: all 0.35s;
+  overflow-x: hidden;
 }
 
 
@@ -66,11 +68,13 @@ header img {
 }
 .msglist li {
   border-bottom: 1px solid #aaa;
-  padding: 5px;
   max-height: 40px;
+  padding: 5px;
 }
 .msglist li img {
-  vertical-align: sub;
+  width: 15%;
+  max-width: 40px;
+  vertical-align: baseline;
 }
 .msglist li h3 {
   display: block;
@@ -90,103 +94,63 @@ header img {
   width: 80%;
 }
 .sendmsg {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: -30px; /*Hide until conversation view*/
   right: 0;
   left: 0;
   height: 30px;
   background-color: #aaa;
+  transition: bottom 0.5s;
 }
 .messages ul {
   list-style-type: none;
+  padding: 0;
+  width: 100%;
 }
-.messages li {
-  margin-top: 5px;
+.speech {
+  position:relative;
+  padding:5px;
+  margin: 5px 3px;
+  border:5px solid #5a8f00;
+  color:#333;
+  background-color: #df9;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  color: #000;
+  font-weight: 600;
 }
-.otherown 
-{
-  display: inline-block;
-position: relative;
-  min-height: 20px;
-padding: 5px;
-background: #D1F1FF;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-border: #206DD0 solid 3px;
+.speech::before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
 }
-
-.otherown:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 5px 17px 5px 0;
-border-color: transparent #D1F1FF;
-display: block;
-width: 0;
-z-index: 1;
-margin-top: -5px;
-left: -17px;
-top: 50%;
+.speech.otherown::before {
+  top:5px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:5px 10px 5px 15px;
+  border-color:transparent #5a8f00;
 }
-
-.otherown:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 7px 19px 7px 0;
-border-color: transparent #206DD0;
-display: block;
-width: 0;
-z-index: 0;
-margin-top: -7px;
-left: -22px;
-top: 50%;
+.speech.userown::before {
+  top:5px; /* controls vertical position */
+  bottom:auto;
+  left: auto;
+  right: -30px; /* value = - border-left-width - border-right-width */
+  border-width:5px 17px 5px 10px;
+  border-color:transparent #5a8f00;
 }
-.userown 
-{
-  display: inline-block;
-position: relative;
-  min-height: 20px;
-padding: 5px;
-background: #FFE5BB;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-border: #FF9400 solid 3px;
-  text-align: right;
-  margin-left: auto;
-  margin-right: 0;
+.speech.userown {
+  margin-right: 10px;
 }
-
-.userown:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 5px 0 5px 17px;
-border-color: transparent #FFE5BB;
-display: block;
-width: 0;
-z-index: 1;
-margin-top: -5px;
-right: -17px;
-top: 50%;
-}
-
-.userown:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 7px 0 7px 19px;
-border-color: transparent #FF9400;
-display: block;
-width: 0;
-z-index: 0;
-margin-top: -7px;
-right: -22px;
-top: 50%;
+.speech.otherown {
+  margin-left: 10px;
 }
