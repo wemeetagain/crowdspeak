@@ -13,6 +13,7 @@ body {
   left: 99%;
   background-color: #fff;
   box-shadow: -5px 0 15px #999;
+  padding-bottom: 20px;
 }
 section {
   margin: none;
@@ -93,12 +94,13 @@ header img {
   width: 80%;
 }
 .sendmsg {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: -30px; /*Hide until conversation view*/
   right: 0;
   left: 0;
   height: 30px;
   background-color: #aaa;
+  transition: bottom 0.5s;
 }
 .messages ul {
   list-style-type: none;
