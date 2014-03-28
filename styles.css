@@ -7,10 +7,13 @@ body {
 .msglist {
   left: 0;
   right: 0;
+  overflow-y: auto;
 }
 .conversation {
   left: 99%;
   background-color: #fff;
+  box-shadow: -5px 0 15px #999;
+  padding-bottom: 20px;
 }
 section {
   margin: none;
@@ -20,6 +23,7 @@ section {
   bottom: 0;
   border: 1px solid #ddd;
   transition: all 0.35s;
+  overflow-x: hidden;
 }
 
 
@@ -64,12 +68,13 @@ header img {
 }
 .msglist li {
   border-bottom: 1px solid #aaa;
-  padding: 5px;
   max-height: 40px;
-  overflow-y: hidden;
+  padding: 5px;
 }
 .msglist li img {
-  vertical-align: sub;
+  width: 15%;
+  max-width: 40px;
+  vertical-align: baseline;
 }
 .msglist li h3 {
   display: block;
@@ -86,6 +91,66 @@ header img {
 }
 .msglist div {
   display: inline-block;
-  overflow-y: hidden;
   width: 80%;
+}
+.sendmsg {
+  position: fixed;
+  bottom: -30px; /*Hide until conversation view*/
+  right: 0;
+  left: 0;
+  height: 30px;
+  background-color: #aaa;
+  transition: bottom 0.5s;
+}
+.messages ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.speech {
+  position:relative;
+  padding:5px;
+  margin: 5px 3px;
+  border:5px solid #5a8f00;
+  color:#333;
+  background-color: #df9;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  color: #000;
+  font-weight: 600;
+}
+.speech::before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+.speech.otherown::before {
+  top:5px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:5px 10px 5px 15px;
+  border-color:transparent #5a8f00;
+}
+.speech.userown::before {
+  top:5px; /* controls vertical position */
+  bottom:auto;
+  left: auto;
+  right: -30px; /* value = - border-left-width - border-right-width */
+  border-width:5px 17px 5px 10px;
+  border-color:transparent #5a8f00;
+}
+.speech.userown {
+  margin-right: 10px;
+}
+.speech.otherown {
+  margin-left: 10px;
 }
