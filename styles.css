@@ -106,8 +106,10 @@ header img {
   list-style-type: none;
   padding: 0;
   width: 100%;
+  position: relative;
 }
 .speech {
+  display: inline-block;
   position:relative;
   padding:5px;
   margin: 5px 3px;
@@ -150,6 +152,7 @@ header img {
 }
 .speech.userown {
   margin-right: 10px;
+  float: right;
 }
 .speech.otherown {
   margin-left: 10px;
