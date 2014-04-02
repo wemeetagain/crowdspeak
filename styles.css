@@ -152,7 +152,8 @@ header img {
 }
 .speech.userown {
   margin-right: 10px;
-  float: right;
+  position: absolute;
+  right: 0;
 }
 .speech.otherown {
   margin-left: 10px;
