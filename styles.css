@@ -3,6 +3,7 @@ body {
   font-size: 15px;
   font-family: helvetica, sans-serif;
   margin: 0;
+  overflow: hidden;
 }
 .msglist {
   left: 0;
@@ -13,7 +14,7 @@ body {
   left: 99%;
   background-color: #fff;
   box-shadow: -5px 0 15px #999;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 section {
   margin: none;
