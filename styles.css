@@ -154,6 +154,7 @@ header img {
 .speech.userown {
   margin-right: 10px;
   float: right;
+  text-align: right;
 }
 .speech.otherown {
   margin-left: 10px;
