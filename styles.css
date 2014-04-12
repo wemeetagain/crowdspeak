@@ -58,7 +58,7 @@ header img {
 .header-left {
   left: 5px;
 }
-.header:active {
+.header:active, .sendmsg img:active {
   background-image: -webkit-radial-gradient(circle, rgba(255, 255, 255, 0.75) 30%, rgba(0, 0, 0, 0) 75%);
 }
 
@@ -100,7 +100,23 @@ header img {
   right: 0;
   left: 0;
   height: 30px;
-  background-color: #aaa;
+  transition: bottom 0.5s;
+  border-top: 1px solid #aaa;
+}
+.sendmsg input {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+.sendmsg img {
+  position: fixed;
+  height: 21px;
+  padding: 4px;
+  right: 0;
+  bottom: -30px;
+  background-color: #0067ad;
+  background-image: linear-gradient(to top, #0e76bc, #238bd1);
   transition: bottom 0.5s;
 }
 .messages ul {
