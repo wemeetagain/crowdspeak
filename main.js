@@ -22,5 +22,6 @@ var conversationSection = document.getElementsByClassName("conversation")[0],
     },
     scrollToBottom = function () {
       var msglist = conversationSection.children[0].children[0];
-      msglist.children[msglist.children.length - 2].focus(); //-2 is to compensate that the count starts from 0 instead of from 1 (in length it starts from 1) and that the last element is a <br>
+      msglist.children[msglist.children.length - 1].tabIndex = "0";
+      msglist.children[msglist.children.length - 1].focus(); //-1 is to compensate that the count starts from 0 instead of from 1 (in length it starts from 1)
     }

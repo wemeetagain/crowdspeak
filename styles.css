@@ -140,6 +140,10 @@ header img {
   font-weight: 600;
   clear: both;
 }
+.speech:focus {
+  /*(REMOVE BROWSER STYLES)*/
+  outline: none;
+}
 .speech::before {
   content:"";
   position:absolute;
