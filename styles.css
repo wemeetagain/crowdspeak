@@ -3,6 +3,7 @@ body {
   font-size: 15px;
   font-family: helvetica, sans-serif;
   margin: 0;
+  overflow: hidden;
 }
 .msglist {
   left: 0;
@@ -13,7 +14,7 @@ body {
   left: 99%;
   background-color: #fff;
   box-shadow: -5px 0 15px #999;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 section {
   margin: none;
@@ -57,7 +58,7 @@ header img {
 .header-left {
   left: 5px;
 }
-.header:active {
+.header:active, .sendmsg img:active {
   background-image: -webkit-radial-gradient(circle, rgba(255, 255, 255, 0.75) 30%, rgba(0, 0, 0, 0) 75%);
 }
 
@@ -99,7 +100,23 @@ header img {
   right: 0;
   left: 0;
   height: 30px;
-  background-color: #aaa;
+  transition: bottom 0.5s;
+  border-top: 1px solid #aaa;
+}
+.sendmsg input {
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+.sendmsg img {
+  position: fixed;
+  height: 21px;
+  padding: 4px;
+  right: 0;
+  bottom: -30px;
+  background-color: #0067ad;
+  background-image: linear-gradient(to top, #0e76bc, #238bd1);
   transition: bottom 0.5s;
 }
 .messages ul {
@@ -108,10 +125,11 @@ header img {
   width: 100%;
 }
 .speech {
+  display: inline-block;
   position:relative;
   padding:5px;
-  margin: 5px 3px;
-  border:5px solid #5a8f00;
+  margin: 1px 3px;
+  border:2px solid #5a8f00;
   color:#333;
   background-color: #df9;
   /* css3 */
@@ -120,6 +138,11 @@ header img {
   border-radius:10px;
   color: #000;
   font-weight: 600;
+  clear: both;
+}
+.speech:focus {
+  /*(REMOVE BROWSER STYLES)*/
+  outline: none;
 }
 .speech::before {
   content:"";
@@ -134,23 +157,26 @@ header img {
   width:0;
 }
 .speech.otherown::before {
-  top:5px; /* controls vertical position */
+  top:10px; /* controls vertical position */
   bottom:auto;
-  left:-30px; /* value = - border-left-width - border-right-width */
-  border-width:5px 10px 5px 15px;
+  left:-27.5px; /* value = - border-left-width - border-right-width */
+  border-width:3px 10px 3px 15px;
   border-color:transparent #5a8f00;
 }
 .speech.userown::before {
-  top:5px; /* controls vertical position */
+  top:10px; /* controls vertical position */
   bottom:auto;
   left: auto;
-  right: -30px; /* value = - border-left-width - border-right-width */
-  border-width:5px 17px 5px 10px;
+  right: -24.4px; /* value = - border-left-width - border-right-width */
+  border-width:3px 10px 3px 12px;
   border-color:transparent #5a8f00;
 }
 .speech.userown {
   margin-right: 10px;
+  float: right;
+  text-align: right;
 }
 .speech.otherown {
   margin-left: 10px;
+  float: left;
 }
